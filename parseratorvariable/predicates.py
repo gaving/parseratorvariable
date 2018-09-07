@@ -11,6 +11,8 @@ class PartialIndex(object):
     def preprocess(self, doc):
         try:
             tags, _ = self.tag(doc)
+        except AttributeError:
+            part = ''            
         except TypeError:
             part = ''
         else:
